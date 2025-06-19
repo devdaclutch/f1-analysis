@@ -1,2 +1,6 @@
-fastf1>=3.1.0
-matplotlib>=3.7.0 
+streamlit
+fastf1
+pandas
+numpy
+plotly
+matplotlib
