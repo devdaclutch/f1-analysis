@@ -1,6 +1,6 @@
 # 🏎️ F1 Driver Comparison Tool
 
-An interactive Streamlit dashboard to visualize and compare the fastest laps between two Formula 1 drivers using real telemetry data. Built with FastF1, Plotly, and Streamlit, this app displays a broadcast-style map of speed dominance and a speed-over-distance trace. Experince it [here]((https://f1-devanalysis.streamlit.app/))
+An interactive Streamlit dashboard to visualize and compare the fastest laps between two Formula 1 drivers using real telemetry data. Built with FastF1, Plotly, and Streamlit, this app displays a broadcast-style map of speed dominance and a speed-over-distance trace. Experince it [here](https://f1-devanalysis.streamlit.app/)
 
 ---
 
