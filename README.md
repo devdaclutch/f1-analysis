@@ -11,6 +11,10 @@ An interactive Streamlit dashboard to visualize and compare the fastest laps bet
 - 📍 Sector annotations on the map
 - 🎛️ Clean interactive UI via Streamlit
 - ✅ Filters out future/unavailable sessions
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/0476b9c9-4ba5-439f-8700-ff04c1d6f4c4" />
+<img width="1439" alt="image" src="https://github.com/user-attachments/assets/a593e5f7-9069-4f5a-a819-edd8c9b86e05" />
+
+
 
 ---
 
