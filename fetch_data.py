@@ -11,7 +11,8 @@ setup_mpl()
 session = fastf1.get_session(2023, 'Monaco', 'Q')
 session.load()
 
-lap = session.laps.pick_driver('VER').pick_fastest()
+driver = 'VER'
+lap = session.laps.pick_driver(driver).pick_fastest()
 car_data = lap.get_car_data().add_distance()
 
 # Extract telemetry
@@ -37,7 +38,7 @@ ax2.set_ylabel('Throttle / Brake (%)')
 ax2.set_ylim(0, 105)
 
 # Title and legend
-fig.suptitle('VER - 2023 Monaco Q - Speed, Throttle, Brake vs Distance')
+fig.suptitle(f"{driver} - {session.event.year} {session.event['EventName']} {session.name} - Speed, Throttle, Brake vs Distance")
 fig.legend(loc='upper right')
 
 plt.tight_layout()
