@@ -7,7 +7,8 @@ os.makedirs('./f1_cache', exist_ok=True)
 fastf1.Cache.enable_cache('./f1_cache')
 setup_mpl()
 
-session = fastf1.get_session(2020, 'Monaco', 'R')
+# Use an existing session to avoid fetch errors
+session = fastf1.get_session(2023, 'Monaco', 'Q')
 session.load()
 
 lap = session.laps.pick_driver('VER').pick_fastest()

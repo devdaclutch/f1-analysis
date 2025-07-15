@@ -42,7 +42,15 @@ speed1 = tel1_interp['Speed']
 speed2 = tel2_interp['Speed']
 
 # --- Delta computation ---
-delta = speed2.cumsum() - speed1.cumsum()
+# Convert speeds from km/h to m/s
+speed1_ms = speed1 / 3.6
+speed2_ms = speed2 / 3.6
+
+# Distance step for each sample (in meters)
+dist_step = np.gradient(common_distance)
+
+# Cumulative time delta in seconds (positive means driver2 is faster)
+delta = np.cumsum(dist_step * (1 / speed1_ms - 1 / speed2_ms))
 
 # --- Plot ---
 fig, axs = plt.subplots(2, 1, sharex=True, figsize=(10, 6))
@@ -55,11 +63,11 @@ axs[0].grid(True)
 axs[0].set_title(f'Speed Trace - {args.driver1.upper()} vs {args.driver2.upper()} - {args.track} {args.year} {args.session.upper()}')
 
 axs[1].plot(common_distance, delta, color='purple')
-axs[1].set_ylabel(f'Delta ({args.driver2.upper()} - {args.driver1.upper()})')
+axs[1].set_ylabel(f"Delta Time ({args.driver2.upper()} - {args.driver1.upper()}) [s]")
 axs[1].set_xlabel('Distance (m)')
 axs[1].axhline(0, color='gray', linestyle='--')
 axs[1].grid(True)
-axs[1].set_title('Cumulative Speed Delta')
+axs[1].set_title('Cumulative Time Delta')
 
 plt.tight_layout()
 plt.show()
